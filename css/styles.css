@@ -1,0 +1,67 @@
+pre,
+code,
+.monospace {
+    font-family: 'Inconsolata', monospace;
+}
+
+.error {
+    color: #e40000;
+}
+
+article {
+    padding: var(--dim-large);
+}
+
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    line-height: 2;
+}
+
+article p {
+    line-height: 1.5;
+    text-align: justify;
+    color: var(--colour-foreground);
+}
+
+.background-alt {
+    background: var(--colour-background-alt);
+}
+
+.icon-small-2 {
+    font-size: var(--dim-small-2);
+    font-family: 'Remix';
+}
+
+.icon-small-1 {
+    font-size: var(--dim-small-1);
+    font-family: 'Remix';
+}
+
+.icon-medium {
+    font-size: var(--dim-medium);
+    font-family: 'Remix';
+}
+
+.icon-large {
+    font-size: var(--dim-large);
+    font-family: 'Remix';
+}
+
+.icon-huge-1 {
+    font-size: var(--dim-huge-1);
+    font-family: 'Remix';
+}
+
+.icon-huge-2 {
+    font-size: var(--dim-huge-2);
+    font-family: 'Remix';
+}
+
+.icon-huge-3 {
+    font-size: var(--dim-huge-3);
+    font-family: 'Remix';
+}

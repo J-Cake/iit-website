@@ -1,0 +1,118 @@
+:root,
+* {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    box-sizing: border-box;
+    --colour-foreground: #323232;
+    --colour-background: #cccaca;
+    --colour-background-alt: #ffffff;
+    --colour-accent: #4f94af;
+    /* background: var(--colour-background); */
+    color: var(--colour-foreground);
+    font-family: 'Raleway';
+    transition-property: background-color color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+body {
+    /* height: 600vh; */
+    background: var(--colour-background);
+    /* overflow-x: hidden; */
+    width: 100vw;
+}
+
+:root {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
+a {
+    text-decoration: none;
+    color: var(--colour-accent);
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('../res/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('../res/Inconsolata-Regular.ttf');
+}
+
+@font-face {
+    font-family: Remix;
+    src: url('../res/remixicon.ttf');
+}
+
+@media screen and (prefers-color-scheme: dark) {
+     :root,
+    * {
+        --colour-foreground: #bebebe;
+        --colour-background: #222121;
+        --colour-background-alt: #020202;
+        --colour-accent: #2b578a;
+    }
+}
+
+.header-button {
+    display: block;
+    text-align: center;
+    line-height: var(--dim-large);
+    font-size: var(--dim-small-1);
+    font-weight: 900;
+    width: 100%;
+    letter-spacing: 1.5px;
+    color: var(--colour-foreground);
+    transition: background-color 0.2s ease-in-out;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.header-button:hover {
+    background: var(--colour-accent);
+}
+
+nav {
+    width: 100vw;
+    z-index: 2;
+}
+
+#view-container {
+    z-index: 1;
+    background: linear-gradient(var(--colour-background-alt), var(--colour-background));
+}
+
+.profile-section-container {
+    min-height: 100vh;
+    padding-top: calc(var(--dim-large) * 2);
+}
+
+.profile-section-container>h1:first-child {
+    top: var(--dim-large);
+    font-size: var(--dim-medium);
+    text-align: center;
+    padding: var(--dim-small-1);
+    z-index: 3;
+}
+
+footer {
+    z-index: 4;
+}
+
+h1 {
+    font-size: 24pt;
+}
+
+section.slideshow-container {}
+
+#profile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+}
