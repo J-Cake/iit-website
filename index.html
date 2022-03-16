@@ -12,27 +12,27 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <script defer="true">
-        window.addEventListener('load', async function() {
+        window.addEventListener('load', async function () {
             for (const el of document.querySelectorAll(`include[href]`))
                 await fetch(el.getAttribute('href'))
-                .then(r => r.ok ? r.text().then(text => [...text].join('')) : el.replaceWith(...el.childNodes))
-                .then(function(t) {
-                    if (!t)
-                        return;
+                    .then(r => r.ok ? r.text().then(text => [...text].join('')) : el.replaceWith(...el.childNodes))
+                    .then(function (t) {
+                        if (!t)
+                            return;
 
-                    const div = document.createElement('div');
-                    for (const attr of el.attributes)
-                        if (attr.name !== 'href')
-                            div.setAttribute(attr.name, attr.value);
+                        const div = document.createElement('div');
+                        for (const attr of el.attributes)
+                            if (attr.name !== 'href')
+                                div.setAttribute(attr.name, attr.value);
 
-                    div.innerHTML = t;
+                        div.innerHTML = t;
 
-                    // browser security measure prevents executing scripts from HTML strings
-                    for (const script of div.querySelectorAll('script'))
-                        setTimeout(() => new Function(script.innerText)(), 200);
+                        // browser security measure prevents executing scripts from HTML strings
+                        for (const script of div.querySelectorAll('script'))
+                            setTimeout(() => new Function(script.innerText)(), 200);
 
-                    el.replaceWith(div);
-                })
+                        el.replaceWith(div);
+                    })
         });
     </script>
 </head>
@@ -51,7 +51,7 @@
 
         <section id="view-container" class="flex-vertical padding-medium sticky-container">
 
-            <include href=".include/profile.html" class="flex-horizontal space-even" id="header-content"></include>
+            <include href=".include/profile.html" class="flex-horizontal-swappable space-even" id="header-content"></include>
 
             <section class="profile-section-container" id="personal-information">
                 <h1 class="header-1 position-sticky-top">Personal Information</h1>
