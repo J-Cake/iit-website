@@ -71,6 +71,19 @@ a {
         display: block;
         margin-top: 0;
     }
+
+    * {
+        font-size: small;
+    }
+
+    article h1,
+    article h2,
+    article h3,
+    article h4,
+    article h5,
+    article h6 {
+        font-size: small;
+    }
 }
 
 .header-button {
@@ -151,6 +164,7 @@ section.slideshow-slide-list {
     min-height: calc(var(--slide-width) * (9/16));
     max-width: var(--slide-width);
     max-height: calc(var(--slide-width) * (9/16));
+    padding: var(--dim-small-2);
 }
 
 .slideshow-controls {
