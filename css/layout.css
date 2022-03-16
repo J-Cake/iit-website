@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-}
+/* max-width: calc(2 * var(--slide-width)); *//* max-width: var(--slide-width); */}
 
 .flex-horizontal-swappable {
     display: flex;

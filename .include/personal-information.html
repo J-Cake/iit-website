@@ -1,14 +1,46 @@
 <article>
 
-    hi
+    <section class="slideshow-container padding-large" id="personal-intro-slideshow">
+        <section class="slideshow-slide-list flex-horizontal">
+            <div class="slide">
+                <h1>
+                    I'm Jacob.
+                </h1>
+                <p>
 
-    <section class="slideshow-container">
-        <div class="slide">
+                </p>
+            </div>
+            <div class="slide">
+                <h1>I like to code - a lot</h1>
+            </div>
+            <div class="slide">
+                <h1>Slide 3</h1>
+            </div>
+        </section>
 
+        <div class="flex-horizontal slideshow-controls">
+            <button class="icon-large btn-prev">&#xEA63;</button>
+            <button class="icon-large btn-next">&#xEA6D;</button>
         </div>
-        <div class="slide">
 
-        </div>
+        <script defer="true">
+            const slides = document.querySelectorAll('#personal-intro-slideshow .slide');
+            const slideContainer = document.querySelector("#personal-intro-slideshow .slideshow-slide-list");
+
+            let slideIndex = 0;
+
+            const loop = n => slides.length > 0 ? (n < 0 ? slides.length - 1 : (n % slides.length)) : 0;
+            window.showSlide = n => slideContainer.scrollTo({ left: (slideIndex = loop(slideIndex + n)) * 820, behavior: 'smooth' });
+
+            const prevBtn = document.querySelector('#personal-intro-slideshow .btn-prev');
+            const nextBtn = document.querySelector('#personal-intro-slideshow .btn-next');
+
+            prevBtn.addEventListener('click', () => showSlide(-1));
+            nextBtn.addEventListener('click', () => showSlide(1));
+
+            setInterval(() => showSlide(1), 5000);
+        </script>
+
     </section>
 
 </article>
