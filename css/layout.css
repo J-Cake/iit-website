@@ -1,11 +1,11 @@
 :root {
     --dim-small-2: 9pt;
-    --dim-small-1: 14pt;
+    --dim-small-1: 18pt;
     --dim-medium: 48px;
     --dim-large: 76px;
     --dim-huge-1: 128px;
     --dim-huge-2: 256px;
-    --dim-huge-3: 600px;
+    --dim-huge-3: 1200px;
     --screen-handheld: 640px;
 }
 
@@ -21,7 +21,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    max-max-max-max-max-width: 100%;
 /* max-width: calc(2 * var(--slide-width)); *//* max-width: var(--slide-width); */}
 
 .flex-horizontal-swappable {
@@ -97,6 +97,34 @@
 
 .width-huge-3 {
     width: var(--dim-huge-3);
+}
+
+.max-width-small-2 {
+    max-width: var(--dim-small-2);
+}
+
+.max-width-small-1 {
+    max-width: var(--dim-small-1);
+}
+
+.max-width-medium {
+    max-width: var(--dim-medium);
+}
+
+.max-width-large {
+    max-width: var(--dim-large);
+}
+
+.max-width-huge-1 {
+    max-width: var(--dim-huge-1);
+}
+
+.max-width-huge-2 {
+    max-width: var(--dim-huge-2);
+}
+
+.max-width-huge-3 {
+    max-width: var(--dim-huge-3);
 }
 
 .height-small-2 {
@@ -237,4 +265,8 @@
 
 .padding-huge-3 {
     padding: var(--dim-huge-3);
+}
+
+.margin-horizontal-auto {
+    margin: 0 auto;
 }

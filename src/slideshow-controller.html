@@ -1,0 +1,38 @@
+<script defer type="module">
+    window.slideshowController = function (container) {
+        const slides = container.querySelectorAll('.slide');
+        const slideContainer = container.querySelector('.slideshow-slide-list');
+
+        let slideIndex = 0;
+
+        const loop = n => slides.length > 0 ? (n < 0 ? slides.length - 1 : (n % slides.length)) : 0;
+        const showSlide = n => slideContainer.scrollTo({ left: (slideIndex = loop(slideIndex + n)) * slides[slideIndex].clientWidth, behavior: 'smooth' });
+
+        let int = setInterval(() => showSlide(1), 10_000);
+
+        const prevBtn = container.querySelector('.btn-prev');
+        const nextBtn = container.querySelector('.btn-next');
+        const stopBtn = container.querySelector('.btn-stop');
+
+        stopBtn.addEventListener('click', function (el) {
+            clearInterval(int);
+            int = null;
+            this.remove();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            showSlide(-1)
+            if (int) {
+                clearInterval(int);
+                int = setInterval(() => showSlide(1), 10_000);
+            }
+        });
+        nextBtn.addEventListener('click', () => {
+            showSlide(1)
+            if (int) {
+                clearInterval(int);
+                int = setInterval(() => showSlide(1), 10_000);
+            }
+        });
+    }
+</script>

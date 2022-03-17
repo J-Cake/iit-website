@@ -1,47 +1,67 @@
-<article class="flex-horizontal">
+<article>
+    <h1>Some facts about myself.</h1>
 
-    <section class="slideshow-container padding-large" id="personal-intro-slideshow">
+    <div class="flex-horizontal">
 
-        <div class="flex-horizontal slideshow-controls">
-            <button class="icon-large btn-prev">&#xEA63;</button>
-            <button class="icon-large btn-next">&#xEA6D;</button>
-        </div>
+        <section class="slideshow-container padding-large" id="personal-intro-slideshow">
 
-        <section class="slideshow-slide-list flex-horizontal">
-            <div class="slide">
-                <h1>
-                    I'm Jacob.
-                </h1>
-                <p>
-                    I'm Jacob. I'm fresh out of high school, with a keen interest for computers and maths. 
-                </p>
+            <button class="icon-small-1 position-absolute btn-stop">&#xEFD5;</button>
+
+            <section class="slideshow-slide-list flex-horizontal">
+                <div class="slide">
+                    <h1>I'm Jacob.</h1>
+                    <figure class="float-left width-huge-1">
+                        <img src="img/yr12-formal.jpg" alt="A photo of me" class="width-huge-1">
+                        <figcaption>A few hours before my yr. 12 formal.</figcaption>
+                    </figure>
+                    <p>
+                        I'm Jacob. I'm fresh out of high school, with a keen interest for computers and maths.
+                    </p>
+                </div>
+                <div class="slide">
+                    <h1>Nationality</h1>
+                    <figure class="float-right width-huge-2">
+                        <img src="https://www.wofaps.org/wp-content/uploads/2018/03/Tuebingen-Germany.jpg"
+                            alt="I grew up in Tübingen, a city in southwest Germany" class="width-huge-2">
+                        <figcaption>One of the most iconic photos of Tübingen. Just across the Neckar</figcaption>
+                    </figure>
+                    <p>
+                        I'm originally from Germany, but I've lived in Australia for the past 10 years.
+                    </p>
+                </div>
+                <div class="slide">
+                    <h1>Education</h1>
+                    <p>
+                        I started primary school in Germany, where I completed my 3rd grade.
+                        I completed primary and high school in Australia, where I studied maths, physics and Japanese.
+                        I spent a lot of time programming however, and completed my HSC major project for Multimedia.
+                    </p>
+                </div>
+                <div class="slide">
+                    <h1>My life since High School</h1>
+                    <figure class="float-right width-huge-1">
+                        <img src="https://leanpub.com/site_images/jelinux/tux.png" alt="Linux logo"
+                            class="width-huge-1">
+                        <figcaption>Linux's mascot is a penguin</figcaption>
+                    </figure>
+                    <p>
+                        Having recently completed high school, I have enough time available to myself for some personal
+                        projects,
+                        which I spend studying and learning the workings and internals of the Linux kernel.
+                    </p>
+                </div>
+            </section>
+
+            <div class="flex-horizontal slideshow-controls">
+                <button class="icon-large btn-prev">&#xEA63;</button>
+                <button class="icon-large btn-next">&#xEA6D;</button>
             </div>
-            <div class="slide">
-                <h1>I like to code - a lot</h1>
-            </div>
-            <div class="slide">
-                <h1>Slide 3</h1>
-            </div>
+
+            <include href="src/slideshow-controller.html" />
+
         </section>
 
-        <script defer="true">
-            const slides = document.querySelectorAll('#personal-intro-slideshow .slide');
-            const slideContainer = document.querySelector("#personal-intro-slideshow .slideshow-slide-list");
+        <script defer>window.slideshowController(document.querySelector('#personal-intro-slideshow'))</script>
 
-            let slideIndex = 0;
-
-            const loop = n => slides.length > 0 ? (n < 0 ? slides.length - 1 : (n % slides.length)) : 0;
-            window.showSlide = n => slideContainer.scrollTo({ left: (slideIndex = loop(slideIndex + n)) * slides[slideIndex].clientWidth, behavior: 'smooth' });
-
-            const prevBtn = document.querySelector('#personal-intro-slideshow .btn-prev');
-            const nextBtn = document.querySelector('#personal-intro-slideshow .btn-next');
-
-            prevBtn.addEventListener('click', () => showSlide(-1));
-            nextBtn.addEventListener('click', () => showSlide(1));
-
-            setInterval(() => showSlide(1), 5000);
-        </script>
-
-    </section>
-
+    </div>
 </article>

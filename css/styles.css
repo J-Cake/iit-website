@@ -29,6 +29,7 @@ article p {
     line-height: 1.5;
     text-align: justify;
     color: var(--colour-foreground);
+    margin: var(--dim-small-2) 0;
 }
 
 .background-alt {
@@ -68,4 +69,33 @@ article p {
 .icon-huge-3 {
     font-size: var(--dim-huge-3);
     font-family: 'Remix';
+}
+
+.float-left {
+    float: left;
+    margin: var(--dim-small-2);
+    font-size: var(--dim-small-2);
+}
+
+.float-right {
+    float: right;
+    margin: var(--dim-small-2);
+    font-size: var(--dim-small-2);
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.nobreak {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.align-right {
+    text-align: right;
 }

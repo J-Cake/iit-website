@@ -4,9 +4,9 @@
     padding: 0;
     position: relative;
     box-sizing: border-box;
-    --colour-foreground: #323232;
-    --colour-background-alt: #cccaca;
-    --colour-background: #ffffff;
+    --colour-foreground: #2d3842;
+    --colour-background: #d3d5db;
+    --colour-background-alt: #ffffff;
     --colour-accent: #4f94af;
     /* background: var(--colour-background); */
     color: var(--colour-foreground);
@@ -14,6 +14,8 @@
     transition-property: background-color color;
     transition-duration: 0.2s;
     transition-timing-function: ease-in-out;
+    
+    scroll-behavior: smooth;
 }
 
 body {
@@ -36,6 +38,7 @@ a {
 @font-face {
     font-family: 'Raleway';
     src: url('../res/Raleway-Regular.ttf');
+    /* font-weight: 700; */
 }
 
 @font-face {
@@ -51,8 +54,8 @@ a {
 @media screen and (prefers-color-scheme: dark) {
     :root, * {
         --colour-foreground: #bebebe;
-        --colour-background: #222121;
-        --colour-background-alt: #020202;
+        --colour-background-alt: #1d1f25;
+        --colour-background: #07080a;
         --colour-accent: #2b578a;
     }
 }
@@ -66,10 +69,11 @@ a {
         overflow-x: hidden;
     }
 
-    nav.position-sticky-top.margin-top-huge-2 {
+    #nav-container.position-sticky-top.margin-top-huge-2 {
         position: relative;
         display: block;
-        margin-top: 0;
+        margin: 0;
+        padding: 0;
     }
 
     * {
@@ -105,13 +109,18 @@ a {
     background: var(--colour-accent);
 }
 
-nav {
+#nav-container {
     width: 100vw;
     z-index: 2;
+
+    background: var(--colour-background);
 }
 
 #view-container {
     z-index: 1;
+    background: var(--colour-background-alt);
+    
+    /* box-shadow: 0 0 var(--dim-medium) 4px var(--colour-background-alt); */
     /* background: linear-gradient(var(--colour-background-alt), var(--colour-background)); */
 }
 
@@ -120,16 +129,42 @@ nav {
     padding-top: calc(var(--dim-large) * 2);
 }
 
-.profile-section-container>h1:first-child {
+.profile-section-container>a:first-child {
     top: var(--dim-large);
+    z-index: 7;
+    display: block;
+    background: var(--colour-background-alt);
+    border-bottom: var(--colour-background) 4px double;
+    width: 100%;
+
+}
+
+.profile-section-container>a:first-child>h1 {
+    display: inline;
+    
     font-size: var(--dim-medium);
+    font-weight: 900;
     text-align: center;
     padding: var(--dim-small-1);
-    z-index: 3;
+}
+
+.profile-section-container>a:first-child:before {
+    content: '\EEB7';
+    opacity: 0;
+    font-family: Remix;
+    font-size: var(--dim-medium);
+    padding: 0 var(--dim-small-1);
+    color: var(--colour-foreground);
+    line-height: var(--dim-m);
+    font-weight: 100;
+}
+.profile-section-container>a:first-child:hover:before {
+    opacity: 1;
 }
 
 footer {
     z-index: 4;
+    padding: var(--dim-small-2);
 }
 
 h1 {
@@ -145,6 +180,7 @@ h1 {
 
 .slideshow-container {
     --slide-width: min(820px, calc(100vw - var(--dim-small-1)));
+    --aspect-ratio: calc(1vh/1vw);
 }
 
 section.slideshow-slide-list {
@@ -154,26 +190,24 @@ section.slideshow-slide-list {
     min-width: var(--slide-width);
     flex-wrap: nowrap;
     justify-content: flex-start;
-    box-shadow: 0 0 var(--dim-medium) 4px var(--colour-background-alt);
+    box-shadow: 0 0 var(--dim-medium) 4px var(--colour-background);
+
+    border-radius: 8px;
 }
 
 .slideshow-slide-list .slide {
     display: block;
     box-sizing: border-box;
     min-width: var(--slide-width);
-    min-height: calc(var(--slide-width) * (9/16));
     max-width: var(--slide-width);
-    max-height: calc(var(--slide-width) * (9/16));
     padding: var(--dim-small-2);
 }
 
 .slideshow-controls {
     justify-content: space-between;
     z-index: 5;
-    position: absolute;
     max-width: var(--slide-width);
     min-width: var(--slide-width);
-    top: calc(var(--slide-width) * (9/16) + var(--dim-large) / 2);
 }
 
 .slideshow-controls button {
@@ -185,6 +219,29 @@ section.slideshow-slide-list {
     cursor: pointer;
 }
 
+.btn-stop {
+    border: none;
+    margin: var(--dim-small-2);
+    background: none;
+    opacity: 0.75;
+    border-radius: var(--dim-small-1);
+    z-index: 6;
+}
+
 .slideshow-controls button:hover {
     filter: brightness(0.8);
+}
+
+table {
+    border-spacing: var(--dim-small-1) var(--dim-small-2);
+}
+
+figure img {
+    display: block;
+}
+
+figure figcaption {
+    display: block;
+    width: 100%;
+    font-size: var(--dim-small-2);
 }
