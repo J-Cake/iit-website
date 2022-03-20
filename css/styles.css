@@ -12,10 +12,6 @@ h1, h2, h3, h4, h5, h6 {
     text-shadow: 0 0 24px var(--colour-background-alt);
 }
 
-article {
-    padding: var(--dim-large);
-}
-
 article h1,
 article h2,
 article h3,
@@ -30,6 +26,10 @@ article p {
     text-align: justify;
     color: var(--colour-foreground);
     margin: var(--dim-small-2) 0;
+}
+
+.light {
+    opacity: 0.85;
 }
 
 .background-alt {
