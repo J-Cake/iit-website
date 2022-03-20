@@ -66,10 +66,13 @@
         <section id="view-container" class="padding-max-medium-collapse sticky-container">
 
             <article class="max-width-huge-3 margin-horizontal-auto">
-                <include href="include/profile.html" class="flex-horizontal-swappable space-even" id="header-content"></include>
+                <include href="include/profile.html" class="flex-horizontal-swappable space-even" id="header-content">
+                </include>
 
                 <section class="profile-section-container" id="personal-information">
-                    <a href="#personal-information" class="position-sticky-top"><h1 class="header-1">Personal Information</h1></a>
+                    <a href="#personal-information" class="position-sticky-top">
+                        <h1 class="header-1">Personal Information</h1>
+                    </a>
 
                     <include href="include/personal-information.html"></include>
 
@@ -81,7 +84,9 @@
                 </section>
 
                 <section class="profile-section-container" id="interest-in-it">
-                    <a href="#interest-in-it" class="position-sticky-top"><h1 class="header-1">Interest in IT</h1></a>
+                    <a href="#interest-in-it" class="position-sticky-top">
+                        <h1 class="header-1">Interest in IT</h1>
+                    </a>
 
                     <include href="include/interest-in-it.html"></include>
 
@@ -93,7 +98,9 @@
                 </section>
 
                 <section class="profile-section-container" id="ideal-job">
-                    <a href="#idea-job" class="position-sticky-top"><h1 class="header-1">Ideal Job</h1></a>
+                    <a href="#idea-job" class="position-sticky-top">
+                        <h1 class="header-1">Ideal Job</h1>
+                    </a>
 
                     <include href="include/ideal-job.html"></include>
 
@@ -105,7 +112,9 @@
                 </section>
 
                 <section class="profile-section-container" id="personality-profile">
-                    <a href="#personality-profile" class="position-sticky-top"><h1 class="header-1">Personality Profile</h1></a>
+                    <a href="#personality-profile" class="position-sticky-top">
+                        <h1 class="header-1">Personality Profile</h1>
+                    </a>
 
                     <include href="include/personality-profile.html"></include>
 
@@ -117,7 +126,9 @@
                 </section>
 
                 <section class="profile-section-container" id="project-ideas">
-                    <a href="#project-ideas" class="position-sticky-top"><h1 class="header-1">Project Ideas</h1></a>
+                    <a href="#project-ideas" class="position-sticky-top">
+                        <h1 class="header-1">Project Ideas</h1>
+                    </a>
 
                     <include href="include/project-ideas.html"></include>
 
@@ -133,16 +144,24 @@
         </section>
     </section>
 
-    <footer class="flex-horizontal-swappable">
+    <footer>
 
-        <div id="copright-notice" class="padding-small-1">
-            <b>Copyright - Jacob Schneider</b> | Portfolio - RMIT University 2022
+        <div class="flex-horizontal-swappable center">
+            <a href="res/content.pdf" target="_blank">Report in PDF form</a> |
+            <a href="https://github.com/J-Cake/iit-website" target="_blank">Website GitHub Repo</a> | 
+            <a href="res/assessment.pdf" target="_blank">Assessment task</a>
         </div>
 
-        <span class="width-large"></span>
+        <div class="flex-horizontal-swappable">
+            <div id="copright-notice" class="padding-small-1">
+                <b>Copyright - Jacob Schneider</b> | Portfolio - RMIT University 2022
+            </div>
 
-        <div id="i-heart-ts">
-            Made with ❤️ in <b>Byron Bay</b>
+            <span class="width-large"></span>
+
+            <div id="i-heart-ts">
+                Made with ❤️ in <b>Byron Bay</b>
+            </div>
         </div>
 
     </footer>
